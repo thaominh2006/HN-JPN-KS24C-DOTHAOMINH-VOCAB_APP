@@ -1,0 +1,336 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Inter;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f5f6fa;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-vocab {
+    width: 100%;
+    display: none;
+}
+
+.vocab-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 35px 104px;
+}
+
+.vocab-nav h3 {
+    font-size: 25.7px;
+    line-height: 32px;
+    font-weight: 700;
+}
+
+.vocab-nav button {
+    border: none;
+    background-color: #22C55E;
+    border-radius: 6px;
+    width: 163.22px;
+    height: 40px;
+    font-size: 15.6px;
+    color: white;
+    cursor: pointer;
+}
+
+.filter {
+    margin: 24px 104px;
+}
+
+.filter .select-option {
+    width: 100%;
+    height: 38px;
+    border: 1px solid #b1aeae;
+    background-color: #EFEFEF;
+    font-size: 14px;
+    line-height: 19.2px;
+    font-weight: 400px;
+    border-radius: 5px;
+    padding: 0 10px;
+}
+
+.filter input {
+    margin-top: 24px;
+    width: 100%;
+    height: 42px;
+    background-color: #FFFFFF;
+    font-size: 14px;
+    color: black;
+    border: 1px solid #b1aeae;
+    border-radius: 5px;
+    padding: 0 10px;
+}
+
+.vocab-table {
+    width: calc(100% - 208px);
+    height: 48px;
+    background-color: #F9FAFB;
+    overflow: hidden;
+    margin-top: 24.5px;
+    box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 10px 104px;
+}
+.vocab-table thead{
+    background-color: #fff;
+}
+.vocab-table th,
+.vocab-table td {
+    padding: 15px;
+    text-align: left;
+    color: rgb(58, 57, 57);
+    font-size: 15px;
+    color: #9e9b9b;
+    letter-spacing: 0.6px;
+    font-weight: 500;
+    margin: 16px 0px 0px 24px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+.modal-content{
+    background-color: #fff;
+    width: 600px;
+    height: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: auto;
+    max-height: 90vh;
+}
+.modal-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #b1aeae;
+}
+.modal-header h3{
+    font-size: 20px;
+    color: #333;
+    margin: 0;
+}
+.close-btn {
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+.form-group{
+    margin-bottom: 15px;
+}
+.form-group label{
+    font-size: 18px;
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #b1aeae;
+    border-radius: 5px;
+    font-size: 18px;
+}
+.form-group textarea{
+    width: 100%;
+    padding: 8px;
+    height: 80px;
+    border-radius: 5px;
+    border: 1px solid #b1aeae;
+}
+.modal-action{
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 25px;
+    border-top: 1px solid #b1aeae;
+}
+.cancel-btn{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 20px;
+    background-color: #b1aeae;
+    color: white;
+}
+#submit-btn{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 20px;
+    background-color: #3B82F6;
+    color: white;
+}
+.modal-edit {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-container {
+    background-color: #fff;
+    width: 500px;
+    height: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: auto;
+    max-height: 90vh;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #b1aeae;
+}
+.header h3 {
+    font-size: 20px;
+    color: #333;
+    margin: 0;
+}
+.edit-group {
+    margin-bottom: 15px;
+}
+.edit-group label {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+.edit-group input,
+.edit-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #b1aeae;
+    border-radius: 5px;
+    font-size: 18px;
+}
+.edit-group textarea {
+    width: 100%;
+    padding: 8px;
+    height: 80px;
+    border-radius: 5px;
+    border: 1px solid #b1aeae;
+}
+.edit-action {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 25px;
+    border-top: 1px solid #b1aeae;
+}
+.modal-delete {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+.header-delete {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #b1aeae;
+}
+
+.header-delete h3 {
+    font-size: 20px;
+    color: #333;
+    margin: 0;
+}
+
+.delete-action {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 25px;
+    border-top: 1px solid #b1aeae;
+}
+.cancel-delete-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 20px;
+    background-color: #b1aeae;
+    color: white;
+}
+
+#submit-delete-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 20px;
+    background-color: #EF4444;
+    color: white;
+}
+#vocab-panigation{
+    margin-top: 20px;
+    text-align: center;
+}
+#vocab:hover {
+    cursor: pointer;
+}
+.action-edit {
+    text-decoration: none;
+    color: #3B82F6;
+    padding: 10px;
+}
+.action-delete {
+    text-decoration: none;
+    color: #e74c3c;
+}
+#submit-delete-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 20px;
+}
