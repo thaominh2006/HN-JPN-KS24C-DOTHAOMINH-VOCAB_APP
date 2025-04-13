@@ -22,6 +22,16 @@ let category = [
 ];
 let currentPageCate = 1;
 let pageCate = 3;
+function loadCateFilterOptions() {
+    let cateFilter = document.getElementById("cate-filter");
+    cateFilter.innerHTML = '<option value="All Categories">All Categories</option>';
+    category.forEach(item => {
+        let option = document.createElement("option");
+        option.value = item.name;
+        option.textContent = item.name;
+        cateFilter.appendChild(option);
+    });
+}
 function displayCateOpen() {
     document.getElementById("add-edit-modal-cate").style.display = "block";
     document.getElementById("modal-title-cate").innerText = "Add New Category";
@@ -59,7 +69,8 @@ function displayAddNewCate(event) {
     };
     category.push(newCate);
     renderCategoryList(1);
-    updateCateSelectOption();
+    loadCateFilterOptions();
+    displayLoadCategoryOptions();
     displayCloseModal('add-edit-modal-cate');
 }
 function renderCategoryList(pageNum = 1, list = category) {
@@ -124,7 +135,7 @@ function displayEditCateModal(index) {
         updateVocabCategories(oldName, name);
         renderCategoryList();
         renderVocabList();
-        updateCateSelectOption();
+        displayLoadCategoryOptions();
         displayCloseModal('add-edit-modal-cate');
     }
 }
@@ -137,7 +148,6 @@ function displayDeleteCateModal(index) {
         category.forEach((item, i) => item.id = i + 1);
         renderCategoryList();
         renderVocabList();
-        updateCateSelectOption();
         displayCloseModal('modal-dele-cate');
     }
 }
@@ -186,33 +196,11 @@ function displayCatePanigation() {
     panigationContainer.appendChild(nextBtn);
 }
 
-function updateCateSelectOption() {
-    let vocabSelect = document.getElementById("modal-cate");
-    let filterSelect = document.getElementById("cate-filter");
-
-    if (vocabSelect) {
-        vocabSelect.innerHTML = `<option value="" disabled selected>Select Categories</option>`;
-        category.forEach(categories => {
-            let option = document.createElement("option");
-            option.value = categories.name;
-            option.textContent = categories.name;
-            vocabSelect.appendChild(option)
-        });
-    }
-    if (filterSelect) {
-        filterSelect.innerHTML = `<option value="All Categories">All Categories</option>`;
-        category.forEach(categories => {
-            let option = document.createElement("option");
-            option.value = categories.name;
-            option.textContent = categories.name;
-            filterSelect.appendChild(option)
-        });
-    }
-}
 function getCategoryList() {
     return category;
 }
 document.addEventListener("DOMContentLoaded", function () {
     renderCategoryList();
-    updateCateSelectOption();
+    loadCateFilterOptions()
+    renderVocabList();
 });

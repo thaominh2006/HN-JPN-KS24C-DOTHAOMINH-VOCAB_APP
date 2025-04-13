@@ -44,14 +44,23 @@ let vocabularyList = [
 ];
 let currentPageVocab = 1;
 let pageVocab = 4;
+function displayLoadCategoryOptions() {
+    let cateSelect = document.getElementById("modal-cate");
+    cateSelect.innerHTML = ""; 
+    category.forEach(item => {
+        let option = document.createElement("option");
+        option.value = item.name;
+        option.textContent = item.name;
+        cateSelect.appendChild(option);
+    });
+}
 function displayVocabOpen(currentPage = 1) {
-    console.log("hello");
     
-    displayLoadCategoryOptions();
     document.getElementById('add-edit-modal').style.display = "block";
     document.getElementById("modal-title").innerText = "Add New Word";
     let form = document.getElementById("vocab-form");
     form.reset();
+    displayLoadCategoryOptions();
     form.onsubmit = function (event) {
         event.preventDefault();
         displayAddNewWord(currentPage);
@@ -84,7 +93,6 @@ function displayAddNewWord(currentPage) {
     vocabularyList.push(newWord);
     renderVocabList(currentPage)
     displayCloseModal("add-edit-modal");
-    populateCateFilter()
 }
 function renderVocabList(pageNum = currentPageVocab, list = vocabularyList) {
     let tbody = document.getElementById("vocab-list")
@@ -154,7 +162,6 @@ function displayEditModal(index) {
         }
         renderVocabList();
         displayCloseModal('add-edit-modal');
-        populateCateFilter()
     }
 }
 function displayDeleteModal(index) {
@@ -163,7 +170,6 @@ function displayDeleteModal(index) {
         vocabularyList.splice(index, 1)
         renderVocabList();
         displayCloseModal('modal-delete');
-        populateCateFilter()
     }
 }
 function displaySearch() {
@@ -231,13 +237,7 @@ function updateVocabCategories(oldName, newName) {
         }
     });
 }
-function displayLoadCategoryOptions() {
-    updateCateSelectOption();
-}
-function populateCateFilter() {
-    updateCateSelectOption();
-}
+
 document.addEventListener("DOMContentLoaded", function () {
     renderVocabList();
-    populateCateFilter();
 });
