@@ -148,6 +148,8 @@ function displayDeleteCateModal(index) {
         category.forEach((item, i) => item.id = i + 1);
         renderCategoryList();
         renderVocabList();
+        displayLoadCategoryOptions();
+        loadCateFilterOptions();
         displayCloseModal('modal-dele-cate');
     }
 }
