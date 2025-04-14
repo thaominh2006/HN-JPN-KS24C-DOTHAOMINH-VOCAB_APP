@@ -29,6 +29,12 @@ let flashcard = [
         category: "Animals",
         learned: false
     },
+    {
+        word: "Snake",
+        meaning: "Con rắn",
+        category: "Animals",
+        learned: false
+    },
 ]
 let currentIndex = 0; // luu vi tri hien tai trong mang flashcard
 let learnedWord = []; // luu tru cac tu da duoc danh dau da hoc
