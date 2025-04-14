@@ -229,3 +229,109 @@ body {
     font-size: 19.6px;
     color: #666;
 }
+
+@media screen and (max-width:834px){
+    .flashcard{
+        width: 100%;
+    }
+    .flash-header{
+        padding: 10px;
+    }
+    .header-last{
+        padding: 10px;
+    }
+}
+@media screen and (max-width: 375px) {
+    .flashcard {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .flash-header {
+        width: 100%;
+        padding: 0 10px;
+        margin: 20px 0;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .flash-header h3 {
+        font-size: 20px;
+    }
+
+    .flash-categories {
+        width: 100%;
+        margin: 10px 0;
+        padding: 8px 10px;
+        font-size: 14px;
+        height: auto;
+    }
+
+    .flip-card {
+        width: 100%;
+        height: auto;
+        margin-top: 10px;
+    }
+
+    .flash-flex {
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+        margin-top: 16px;
+    }
+
+    .previous-btn,
+    .mark-btn,
+    .next-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .flash-percent {
+        width: 100%;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+
+    .gray-percent {
+        width: 100%;
+    }
+
+    .yellow-percent {
+        width: 50%;
+    }
+
+    .header-last {
+        width: 100%;
+        padding: 0 10px;
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    .last-header h4 {
+        font-size: 18px;
+        margin-top: 16px;
+    }
+
+    .table-flash {
+        width: 100%;
+        margin: 10px 0;
+        overflow-x: auto;
+    }
+
+    .nav-footer {
+        height: auto;
+        padding: 10px 0;
+        font-size: 16px;
+    }
+
+    .nav-footer p {
+        font-size: 14px;
+    }
+}
