@@ -149,7 +149,7 @@ function displayDeleteCateModal(index) {
         renderCategoryList();
         renderVocabList();
         displayLoadCategoryOptions();
-        loadCateFilterOptions();
+        loadCateFilterOptions(); 
         displayCloseModal('modal-dele-cate');
     }
 }
