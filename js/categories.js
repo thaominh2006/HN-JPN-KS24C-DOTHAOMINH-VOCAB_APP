@@ -22,7 +22,7 @@ let category = [
 ];
 let currentPageCate = 1;
 let pageCate = 3;
-function loadCateFilterOptions() {
+function loadCateFilterOptions() { // tạo các tùy chọn cho bộ lọc danh mục
     let cateFilter = document.getElementById("cate-filter");
     cateFilter.innerHTML = '<option value="All Categories">All Categories</option>';
     category.forEach(item => {
@@ -42,7 +42,7 @@ function displayCloseModal(modalId) {
     document.getElementById(modalId).style.display = "none";
 }
 function displayAddNewCate(event) {
-    event.preventDefault();
+    event.preventDefault(); // ngăn sự kiện form mặc định
     let name = document.getElementById("modal-cate-name").value.trim();
     let description = document.getElementById("modal-cate-des").value.trim();
     if (!name || !description) {
@@ -166,7 +166,7 @@ function displayCatePanigation() {
 
     let prevBtn = document.createElement("button");
     prevBtn.textContent = "Previous";
-    prevBtn.disabled = currentPageCate === 1;
+    prevBtn.disabled = currentPageCate === 1; // vô hiệu hóa nếu page = 1;
     prevBtn.onclick = function () {
         if (currentPageCate > 1) {
             currentPageCate--;
@@ -178,7 +178,7 @@ function displayCatePanigation() {
     for (let i = 1; i <= totalPages; i++) {
         let pageBtn = document.createElement("button");
         pageBtn.textContent = i;
-        pageBtn.className = (i === currentPageCate) ? "active" : "";
+        pageBtn.className = (i === currentPageCate) ? "active" : ""; // sử dụng toán tử ternary operator
         pageBtn.onclick = function () {
             currentPageCate = i;
             renderCategoryList(currentPageCate);
@@ -195,7 +195,7 @@ function displayCatePanigation() {
             renderCategoryList(currentPageCate);
         }
     };
-    panigationContainer.appendChild(nextBtn);
+    panigationContainer.appendChild(nextBtn); // them phan tu vao cuoi
 }
 
 function getCategoryList() {
