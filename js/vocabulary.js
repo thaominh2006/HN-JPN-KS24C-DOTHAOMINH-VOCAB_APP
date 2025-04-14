@@ -138,8 +138,7 @@ function displayEditModal(index) {
             Swal.fire({
                 icon: "error",
                 title: "Oops...",
-                text: "Something went wrong!",
-                footer: '<a href="#">Why do I have this issue?</a>'
+                text: "Word or mean or category or example cannot be blank!",
             })
             return;
         }
@@ -148,8 +147,7 @@ function displayEditModal(index) {
             Swal.fire({
                 icon: "error",
                 title: "Oops...",
-                text: "Something went wrong!",
-                footer: '<a href="#">Why do I have this issue?</a>'
+                text: "This word already exist!",
             })
             return;
         }

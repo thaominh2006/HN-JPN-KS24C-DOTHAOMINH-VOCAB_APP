@@ -53,7 +53,7 @@ function displayAddNewCate(event) {
         });
         return;
     }
-    let exist = category.some(item => item.name.toLowerCase() === name.toLowerCase());
+    let exist = category.some(item => item.name.toLowerCase() === name.toLowerCase()); // khong phan biet 
     if (exist) {
         Swal.fire({
             icon: "error",
@@ -111,8 +111,7 @@ function displayEditCateModal(index) {
             Swal.fire({
                 icon: "error",
                 title: "Oops...",
-                text: "Something went wrong!",
-                footer: '<a href="#">Why do I have this issue?</a>'
+                text: "Name or Description cannot be blank!",
             })
             return;
         }
@@ -121,9 +120,8 @@ function displayEditCateModal(index) {
             Swal.fire({
                 icon: "error",
                 title: "Oops...",
-                text: "Something went wrong!",
-                footer: '<a href="#">Why do I have this issue?</a>'
-            })
+                text: "This name already exist!",
+              })
             return;
         }
         let oldName = category[index].name;
