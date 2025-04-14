@@ -23,6 +23,7 @@ body {
 .container-vocab {
     width: 100%;
     display: none;
+    height: 100%;
 }
 
 .vocab-nav {
