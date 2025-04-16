@@ -24,11 +24,11 @@ let currentPageCate = 1;
 let pageCate = 3;
 function loadCateFilterOptions() { // tạo các tùy chọn cho bộ lọc danh mục
     let cateFilter = document.getElementById("cate-filter");
-    cateFilter.innerHTML = '<option value="All Categories">All Categories</option>';
+    cateFilter.innerHTML = '<option value="All Categories">All Categories</option>'; // xoa cu thiet lap moi
     category.forEach(item => {
         let option = document.createElement("option");
-        option.value = item.name;
-        option.textContent = item.name;
+        option.value = item.name; // gia tri = category name
+        option.textContent = item.name; // noi dung hien thi = category name
         cateFilter.appendChild(option);
     });
 }
@@ -74,15 +74,15 @@ function displayAddNewCate(event) {
     displayCloseModal('add-edit-modal-cate');
 }
 function renderCategoryList(pageNum = 1, list = category) {
-    currentPageCate = pageNum;
+    currentPageCate = pageNum; // Save the current page number to currentPageCate
     let tbody = document.getElementById("vocab-list-cate");
-    tbody.innerHTML = "";
+    tbody.innerHTML = ""; // delete old data
 
     let startIndex = (pageNum - 1) * pageCate;
     let endIndex = startIndex + pageCate;
-    let panigatedList = list.slice(startIndex, endIndex)
+    let panigatedList = list.slice(startIndex, endIndex) // cut mot doan du lieu tu start toi end - 1
 
-    panigatedList.forEach(item => {
+    panigatedList.forEach(item => { 
         let row = `
             <tr>
                 <td>${item.name}</td>
@@ -100,7 +100,7 @@ function renderCategoryList(pageNum = 1, list = category) {
 function displayEditCateModal(index) {
     let item = category[index];
     document.getElementById("add-edit-modal-cate").style.display = "block";
-    document.getElementById("modal-title-cate").innerText = "Edit Category"
+    document.getElementById("modal-title-cate").innerText = "Edit Category" // cap nhat tieu de
     document.getElementById("modal-cate-name").value = item.name;
     document.getElementById("modal-cate-des").value = item.description;
     document.getElementById("cate-form").onsubmit = function (event) {
@@ -121,11 +121,11 @@ function displayEditCateModal(index) {
                 icon: "error",
                 title: "Oops...",
                 text: "This name already exist!",
-              })
+            })
             return;
         }
         let oldName = category[index].name;
-        category[index] = {
+        category[index] = { // gan new object
             id: item.id,
             name: name,
             description: description
@@ -147,14 +147,14 @@ function displayDeleteCateModal(index) {
         renderCategoryList();
         renderVocabList();
         displayLoadCategoryOptions();
-        loadCateFilterOptions(); 
+        loadCateFilterOptions();
         displayCloseModal('modal-dele-cate');
     }
 }
 function displaySearchCate() {
     let searchCate = document.getElementById("search-cate").value.toLowerCase();
-    let filteredList = category.filter(item => item.name.toLowerCase().includes(searchCate));
-    renderCategoryList(1, filteredList)
+    let filteredList = category.filter(item => item.name.toLowerCase().includes(searchCate)); //if item.name turn to lowercase and contain searchCate (keep it) 
+    renderCategoryList(1, filteredList) // return to page 1
 }
 function displayCatePanigation() {
     let totalPages = Math.ceil(category.length / pageCate);

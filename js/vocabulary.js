@@ -224,8 +224,8 @@ function displayVocabPanigation() {
     panigationContainer.appendChild(nextBtn);
 }
 
-function deleteVocabByCategory(cateName) {
-    vocabularyList = vocabularyList.filter(item => item.cate !== cateName);
+function deleteVocabByCategory(cateName) { // delete all the word have cate that the same with cateName
+    vocabularyList = vocabularyList.filter(item => item.cate !== cateName); // Keep words that are not in the deleted category.
     vocabularyList.forEach((item, i) => item.id = i + 1);
 }
 function updateVocabCategories(oldName, newName) {

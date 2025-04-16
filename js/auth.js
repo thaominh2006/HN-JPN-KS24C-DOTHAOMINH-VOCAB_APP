@@ -51,6 +51,28 @@ function displayRegister() { // chuc nang dang ky
         displayShowError("Password must be at least 8 characters, including uppercase letters, lowercase letters, and at least one number", "pass-error")
         isValid = false;
     }
+    // function isValidPass(password){
+    //     if(password.length < 8){
+    //         return false;
+    //     }
+    //     let upperCase = false;
+    //     let lowerCase = false;
+    //     let number = false;
+    //     for(let i of password){
+    //         if(i >= 'A' && i <= 'Z'){
+    //             return true;
+    //         }else if(i >= 'a' && i <= 'z'){
+    //             return true;
+    //         }else if(i >= '0' && i <= '9'){
+    //             return true;
+    //         }
+    //         return false;
+    //     }
+    //     if(isValidPass(password)){
+    //         displayShowError("Password must be at least 8 characters, including uppercase letters, lowercase letters, at least one number", "pass-error")
+    //         isValid = false;
+    //     }
+    // }
     if (password !== confirmPass) {
         displayShowError("Confirm Password does not match Password", "confirm-pass-error")
         isValid = false;
