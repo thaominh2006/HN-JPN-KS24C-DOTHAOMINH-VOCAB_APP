@@ -26,7 +26,7 @@ function displayRegister() { // chuc nang dang ky
     let email = document.getElementById("email").value.trim();
     let password = document.getElementById("pass").value;
     let confirmPass = document.getElementById("confirm-pass").value;
-    displayClearError();
+    displayClearError(); // delete old info
     let isValid = true;
     if (!firstName) {
         displayShowError("First name cannot be blank", "first-name-error");
@@ -46,33 +46,11 @@ function displayRegister() { // chuc nang dang ky
         displayShowError("Email already exists!", "email-error")
         isValid = false;
     }
-    let passCheck = /(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/
+    let passCheck = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/
     if (!passCheck.test(password)) {
-        displayShowError("Password must be at least 8 characters, including uppercase letters, lowercase letters, and at least one number", "pass-error")
+        displayShowError("Password must be including uppercase letters, lowercase letters, and at least one number", "pass-error")
         isValid = false;
     }
-    // function isValidPass(password){
-    //     if(password.length < 8){
-    //         return false;
-    //     }
-    //     let upperCase = false;
-    //     let lowerCase = false;
-    //     let number = false;
-    //     for(let i of password){
-    //         if(i >= 'A' && i <= 'Z'){
-    //             return true;
-    //         }else if(i >= 'a' && i <= 'z'){
-    //             return true;
-    //         }else if(i >= '0' && i <= '9'){
-    //             return true;
-    //         }
-    //         return false;
-    //     }
-    //     if(isValidPass(password)){
-    //         displayShowError("Password must be at least 8 characters, including uppercase letters, lowercase letters, at least one number", "pass-error")
-    //         isValid = false;
-    //     }
-    // }
     if (password !== confirmPass) {
         displayShowError("Confirm Password does not match Password", "confirm-pass-error")
         isValid = false;
@@ -141,7 +119,7 @@ function displayClick() { // click vao VocabApp thi quay lai trang dang ky
 }
 function displayShowError(mess, errorId) { // hien thi loi
     let errorElement = document.getElementById(errorId);
-    if(errorElement){
+    if (errorElement) {
         errorElement.innerText = mess
         errorElement.style.display = "block"
     }

@@ -88,9 +88,11 @@ body {
     box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2);
     margin: 10px 104px;
 }
-.vocab-table thead{
+
+.vocab-table thead {
     background-color: #fff;
 }
+
 .vocab-table th,
 .vocab-table td {
     padding: 15px;
@@ -113,7 +115,8 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1000;
 }
-.modal-content{
+
+.modal-content {
     background-color: #fff;
     width: 600px;
     height: 600px;
@@ -125,32 +128,38 @@ body {
     overflow: auto;
     max-height: 90vh;
 }
-.modal-header{
+
+.modal-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
     border-bottom: 1px solid #b1aeae;
 }
-.modal-header h3{
+
+.modal-header h3 {
     font-size: 20px;
     color: #333;
     margin: 0;
 }
+
 .close-btn {
     font-size: 24px;
     cursor: pointer;
     color: #333;
 }
-.form-group{
+
+.form-group {
     margin-bottom: 15px;
 }
-.form-group label{
+
+.form-group label {
     font-size: 18px;
     display: block;
     margin-bottom: 5px;
     color: #333;
 }
+
 .form-group input,
 .form-group select {
     width: 100%;
@@ -159,21 +168,24 @@ body {
     border-radius: 5px;
     font-size: 18px;
 }
-.form-group textarea{
+
+.form-group textarea {
     width: 100%;
     padding: 8px;
     height: 80px;
     border-radius: 5px;
     border: 1px solid #b1aeae;
 }
-.modal-action{
+
+.modal-action {
     display: flex;
     justify-content: flex-end;
     gap: 10px;
     margin-top: 25px;
     border-top: 1px solid #b1aeae;
 }
-.cancel-btn{
+
+.cancel-btn {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -183,7 +195,8 @@ body {
     background-color: #b1aeae;
     color: white;
 }
-#submit-btn{
+
+#submit-btn {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -193,6 +206,7 @@ body {
     background-color: #3B82F6;
     color: white;
 }
+
 .modal-edit {
     display: none;
     position: fixed;
@@ -216,6 +230,7 @@ body {
     overflow: auto;
     max-height: 90vh;
 }
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -223,20 +238,24 @@ body {
     margin-bottom: 20px;
     border-bottom: 1px solid #b1aeae;
 }
+
 .header h3 {
     font-size: 20px;
     color: #333;
     margin: 0;
 }
+
 .edit-group {
     margin-bottom: 15px;
 }
+
 .edit-group label {
     font-size: 18px;
     display: block;
     margin-bottom: 5px;
     color: #333;
 }
+
 .edit-group input,
 .edit-group select {
     width: 100%;
@@ -245,6 +264,7 @@ body {
     border-radius: 5px;
     font-size: 18px;
 }
+
 .edit-group textarea {
     width: 100%;
     padding: 8px;
@@ -252,6 +272,7 @@ body {
     border-radius: 5px;
     border: 1px solid #b1aeae;
 }
+
 .edit-action {
     display: flex;
     justify-content: flex-end;
@@ -259,6 +280,7 @@ body {
     margin-top: 25px;
     border-top: 1px solid #b1aeae;
 }
+
 .modal-delete {
     display: none;
     position: fixed;
@@ -269,6 +291,7 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1000;
 }
+
 .header-delete {
     display: flex;
     justify-content: space-between;
@@ -290,6 +313,7 @@ body {
     margin-top: 25px;
     border-top: 1px solid #b1aeae;
 }
+
 .cancel-delete-btn {
     padding: 10px 20px;
     border: none;
@@ -311,22 +335,27 @@ body {
     background-color: #EF4444;
     color: white;
 }
-#vocab-panigation{
+
+#vocab-panigation {
     margin-top: 20px;
     text-align: center;
 }
+
 #vocab:hover {
     cursor: pointer;
 }
+
 .action-edit {
     text-decoration: none;
     color: #3B82F6;
     padding: 10px;
 }
+
 .action-delete {
     text-decoration: none;
     color: #e74c3c;
 }
+
 #submit-delete-btn {
     padding: 10px 20px;
     border: none;
@@ -335,3 +364,33 @@ body {
     font-size: 14px;
     margin-top: 20px;
 }
+/* if(!password){
+    displayShowError("Password cannot be blank", "pass-error")
+    isValid = false;
+} */
+/* function isValidPass(password) {
+    if (password.length < 8) {
+        return false;
+    }
+    let upperCase = false;
+    let lowerCase = false;
+    let number = false;
+    let special = false;
+    let specialChar = '@'
+    for (let i of password) {
+        if (i >= 'A' && i <= 'Z') {
+            upperCase = true;
+        } else if (i >= 'a' && i <= 'z') {
+            lowerCase = true;
+        } else if (i >= '0' && i <= '9') {
+            number = true;
+        } else if(specialChar.includes(i)){
+            special = true;
+        }
+    }
+    return upperCase && lowerCase && number && special;
+}
+if (isValidPass(password)) {
+    displayShowError("Password must be at least 8 characters, including uppercase letters, lowercase letters, at least one number and special characters", "pass-error")
+    isValid = false;
+} */
