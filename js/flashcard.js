@@ -40,8 +40,8 @@ let currentIndex = 0; // luu vi tri hien tai trong mang flashcard
 let learnedWord = []; // luu tru cac tu da duoc danh dau da hoc
 function displayLoad(){ // hien thi the tieng anh
     let flashCard = flashcard[currentIndex];
-    document.querySelector('.flashcard-front p').textContent = flashCard.word;
-    document.querySelector('.flash-back p').textContent = flashCard.meaning
+    document.querySelector('.flashcard-front p').textContent = flashCard.meaning;
+    document.querySelector('.flash-back p').textContent = flashCard.word;
 }
 document.querySelector('.previous-btn').addEventListener("click", function(){ // nut quay lai
     if(currentIndex > 0){
@@ -52,7 +52,7 @@ document.querySelector('.previous-btn').addEventListener("click", function(){ //
 document.querySelector('.next-btn').addEventListener("click", function(){ // nut tiep tuc
     if(currentIndex < flashcard.length - 1){
         currentIndex++;
-        displayLoad();
+        displayLoad()
     }
 });
 document.querySelector('.mark-btn').addEventListener("click", function(){ // nut danh dau da hoc
@@ -91,8 +91,8 @@ function displayWordList(){ // hien thi danh sach tu da hoc
     learnedWord.forEach(word => {
         let row = document.createElement("tr");
         row.innerHTML = `
-            <td>${word.word}</td>
             <td>${word.meaning}</td>
+            <td>${word.word}</td>
             <td>Learned</td>
         `;
         tbody.appendChild(row);

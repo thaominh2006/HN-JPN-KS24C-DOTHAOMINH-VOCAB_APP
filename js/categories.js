@@ -45,6 +45,14 @@ function displayAddNewCate(event) {
     event.preventDefault(); // ngăn sự kiện form mặc định
     let name = document.getElementById("modal-cate-name").value.trim();
     let description = document.getElementById("modal-cate-des").value.trim();
+    if(name.length > 2 && name.length < 10){
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Name of categories cannot be more 10 letters!",
+        });
+        return;
+    }
     if (!name || !description) {
         Swal.fire({
             icon: "error",
